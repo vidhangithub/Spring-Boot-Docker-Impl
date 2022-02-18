@@ -1,0 +1,3 @@
+rootProject.name = 'recommendation-service'
+include ':chapter-03:api'
+include 'chapter-03:util'
