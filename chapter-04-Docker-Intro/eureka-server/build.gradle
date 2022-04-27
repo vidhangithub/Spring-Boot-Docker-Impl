@@ -4,16 +4,16 @@ plugins {
 	id 'java'
 }
 
-group = 'com.vidhan.microservices.core.product'
+group = 'com.vidhan.microservices.eurka'
 version = '1.0.0-SNAPSHOT'
 sourceCompatibility = '11'
 
-ext {
-	springCloudVersion = "2020.0.4"
-}
-
 repositories {
 	mavenCentral()
+}
+
+ext {
+	set('springCloudVersion', "2020.0.4")
 }
 
 jar {
@@ -21,13 +21,9 @@ jar {
 }
 
 dependencies {
-	implementation project(':api')
-	implementation project(':util')
-	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+	implementation 'org.glassfish.jaxb:jaxb-runtime'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'io.projectreactor:reactor-test'
 }
 
 dependencyManagement {
